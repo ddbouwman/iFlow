@@ -62,3 +62,9 @@ packagePath sediment/
 input       grid hatc0 hatc1 hatc2 u0 zeta0 u1 Kh B sedbc @sedbc t toutput Q1 initial if{finit,@{initial}=='erodibility'} if{Sinit,@{initial}=='stock'}        #optional: Qsed sedsource
 output		c0 c1 c2 a f F T t
 
+module      HinderedSettling_bed
+packagePath sediment/
+inputInit   ws00 mhs cgel wsmin
+input       grid ws00 mhs cgel wsmin c0 ws0
+output      ws0
+iterative   True
